@@ -26,6 +26,16 @@ body{
     height: 100%; /* 757px */
 }
 
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #4A4A4A;
+}
+
+a:hover {
+    border-bottom: 2px solid #FF8345;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -55,13 +65,14 @@ header {
     grid-area: block1;
 }
 
-.block2 {
+.bars_menu {
     grid-area: block2;
 }
 
 .block3 {
     grid-area: block3;
 }
+
 
 .allLogo {
     display: flex;
@@ -95,6 +106,30 @@ article {
     font-size: 28px;
     color: #48B774;
 }
+
+
+
+.bars_menu {
+    display: flex;
+    flex-grow: 5;
+    gap: 7px;
+}
+
+.label_check {
+    display: none;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.input_check {
+    display: none;
+}
+
+#check-menu {
+    display: none;
+}
+
+
 
 nav ul{
     display: flex;
@@ -227,8 +262,9 @@ input:active, :hover, :focus {
     font-size: 25px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    z-index: 3;
 }
-
 
 .search img {
     position: absolute;
@@ -352,7 +388,7 @@ input:active, :hover, :focus {
 }
 
 
-/* @keyframes rotate-circle1 {
+@keyframes rotate-circle1 {
     100% {
         transform:rotate(235deg);
     }
@@ -366,21 +402,21 @@ input:active, :hover, :focus {
 
 @keyframes rotate-circle3 {
     100% {
-        transform:rotate(344deg);
+        transform:rotate(347deg);
     }
 }
 
 @keyframes rotate-circle4 {
     100% {
-        transform:rotate(410deg);
+        transform:rotate(413deg);
     }
 }
 
 @keyframes rotate-circle5 {
     100% {
-        transform:rotate(456deg);
+        transform:rotate(457deg);
     }
-} */
+}
 
 
 
@@ -462,7 +498,7 @@ input:active, :hover, :focus {
 
 @media (max-width: 1300px) {
     input{
-        max-width: 348px;
+        width: 300px;
     }
     .contentLeft h2{
         font-size: 38px;
@@ -475,16 +511,74 @@ input:active, :hover, :focus {
 }
 
   @media (max-width: 1200px) {
+
+    .bars_menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        text-align: center;
+    }
+    #check-menu {
+        display: none;
+    }
+    .label_check {
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .block2 {
+        width: 100%;
+        display: none;
+        font-size: 18px;
+        padding: 0;
+        max-height: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .block2 ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 15px;
+        font-size: 0;
+        height: 0;
+    }
+    .block2 ul li {
+        margin-top: 10px;
+    }
+
+    #check-menu:checked ~ .block2{
+        max-height: 100%;
+        display: block;
+        margin-bottom: 50px;
+    }
+    #check-menu:checked ~ .block2 ul{
+        max-height: 100%;
+    }
+
+
+
     .container{
-        margin: 0 5em 0 5em;
+        margin: 0 0 0 0;
         max-width: 1200px;
     }
     header {
-        grid-template-areas: "block1 block2 block2 block2  block3"
+        grid-template-areas: "block1 block2  block3"
     }
+
     .allLogo {
+        justify-self: center;
         margin-left: 0;
     }
+
+    .headerButton {
+        justify-self: center;
+    }
+
     nav ul {
         margin-left: 4em;
     }
@@ -509,5 +603,342 @@ input:active, :hover, :focus {
     }
     .box{
         max-width: none;
+    }
+}
+
+@media (max-width: 996px) {
+    main img {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 557px) {
+    .headerButton {
+        font-size: 10px;
+        padding: 5px 18px 5px 18px;
+    }
+
+
+    .allLogo p {
+        font-size: 15px;
+    }
+    article {
+        font-size: 20px;
+    }
+    
+    .contentLeft h2{
+        font-size: 28px;
+        line-height: 35px;
+    }
+
+    .container p {
+        font-size: 10px;
+        line-height: 18px;
+    }
+
+    input{
+        width: 180px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .search {
+        height: 45px;
+        width: 45px;
+    }
+
+    .example{
+        height: 52px;
+    }
+
+    .users {
+        gap: 2em;
+    }
+
+    .users .usersSvg img {
+        width: 32px;
+    }
+
+    .plus {
+        width: 26px;
+        height: 26px;
+    }
+
+    main {
+        grid-template-columns: repeat(1, minmax(200px, 500px));
+        gap: 10em;
+        margin-top: 30px
+    }
+    main img {
+        max-width: 400px;
+    }
+    .outCircle {
+        width: 280px;
+        height: 280px;
+    }
+    .inCircle {
+        width: 160px;
+        height: 160px;
+    }
+
+
+    .toogle:nth-child(3){
+        transform: rotate(-24deg);
+    }
+    .toogle:nth-child(4){
+        transform: rotate(38deg);
+    }
+    .toogle:nth-child(5){
+        transform: rotate(81deg);
+    }
+
+    .ball3 {
+        width: 110px;
+        height: 110px;
+        transform:rotate(24deg);
+    }
+
+    .ball4 {
+        width: 110px;
+        height: 110px;
+        transform:rotate(-38deg);
+    }
+    
+    .ball5 {
+        width: 110px;
+        height: 110px;
+        transform:rotate(-81deg);
+    }
+
+    @keyframes dd1 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 5em;
+        }
+    }
+    
+    @keyframes dd2 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 5.5em;
+        }
+    }
+    
+    @keyframes dd3 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 4.5em;
+        }
+    }
+    
+    @keyframes dd4 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 4.5em;
+        }
+    }
+    
+    @keyframes dd5 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 5em;
+        }
+    }
+
+
+    @keyframes rotate-circle3 {
+        100% {
+            transform:rotate(336deg);
+        }
+    }
+
+    @keyframes rotate-circle4 {
+        100% {
+            transform:rotate(398deg);
+            }
+    }
+
+    @keyframes rotate-circle5 {
+        100% {
+            transform:rotate(441deg);
+        }
+    }
+}
+
+@media (max-width: 440px) {
+
+    .container {
+    margin: 0 0 0 0;
+    }
+
+    main {
+        gap: 3em;
+    }
+
+    main img {
+        max-width: 290px;
+    }
+
+    input{
+        width: 236px;
+        height: 30px;
+        font-size: 12px;
+        padding-left: 0;
+        margin-left: 10px;
+    }
+
+    .search {
+        height: 25px;
+        width: 25px;
+    }
+
+    .search img {
+        width: 15px;
+    }
+
+    .example{
+        height: 32px;
+        margin-top: 30px;
+    }
+
+    .users {
+        margin-top: 70px;
+    }
+
+    .outCircle {
+        width: 200px;
+        height: 200px;
+        margin-top: -14em;
+    }
+    .inCircle {
+        width: 110px;
+        height: 110px;
+        margin-top: -9em;
+    }
+
+    .toogle:nth-child(2){
+        transform: rotate(-74deg);
+    }
+
+    .toogle:nth-child(3){
+        transform: rotate(-32deg);
+    }
+    .toogle:nth-child(4){
+        transform: rotate(9deg);
+    }
+    .toogle:nth-child(5){
+        transform: rotate(59deg);
+    }
+
+    .ball2 {
+        transform:rotate(74deg);
+    }
+
+    .ball3 {
+
+        transform:rotate(32deg);
+    }
+
+    .ball4 {
+        transform:rotate(-9deg);
+    }
+    
+    .ball5 {
+        transform:rotate(-59deg);
+    }
+
+    @keyframes dd1 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 2em;
+        }
+    }
+    
+    @keyframes dd2 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 2.5em;
+        }
+    }
+    
+    @keyframes dd3 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 2em;
+        }
+    }
+    
+    @keyframes dd4 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 1.5em;
+        }
+    }
+    
+    @keyframes dd5 {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            padding-bottom: 1.7em;
+        }
+    }
+
+    @keyframes rotate-circle2 {
+        100% {
+            transform:rotate(286deg);
+        }
+    }
+
+    @keyframes rotate-circle3 {
+        100% {
+            transform:rotate(328deg);
+        }
+    }
+
+    @keyframes rotate-circle4 {
+        100% {
+            transform:rotate(369deg);
+        }
+    }
+
+    @keyframes rotate-circle5 {
+        100% {
+            transform:rotate(419deg);
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        margin: 0 0 0 8px;
     }
 }

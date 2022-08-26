@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="index.css">
     <title>Document</title>
 </head>
@@ -23,14 +22,18 @@
             </div>
             <p>Global</p>
         </div>
+        <div class=" bars_menu" >
+            <input class="input_check" type="checkbox" id="check-menu">
+            <label class="label_check" for="check-menu">Меню</label>
         <nav class="block2">
             <ul>
-                <li><p>Mobile Top Up</p></li>
-                <li><p>About</p></li>
-                <li><p>Rate</p></li>
-                <li><p>Help</p></li>
+                <li><p><a href="#">Mobile Top Up</a></p></li>
+                <li><p><a href="#">About</a></p></li>
+                <li><p><a href="#">Rate</a></p></li>
+                <li><p><a href="#">Help</a></p></li>
             </ul>
         </nav>
+        </div>
         <button class="block3 headerButton">Sign Up</button>
     </header>
     <main>
@@ -42,24 +45,18 @@
                 <br/>basedon your unique calling behavior.</p>
                 <button class="headerButton">Get Started</button>
                 <form class="example" id="example" >
-                    <input type="text" form="example" placeholder="Where do you want to call?" name="search" minlength="4" maxlength="12">
-                    <button class="search" type="submit" form="example" style="cursor: pointer;"> <img src="img/svg/glass.svg" alt="glass" class="glassIcon"></button> 
-                    <!-- <i class="fa fa-search"></i> -->
+                    <input type="text" form="example" placeholder="Where do you want to call?" name="search"  pattern=".{4,}"  maxlength="12"   onkeyup="this.value = this.value.replace(/[^\w\.\,\-,\+,\=,\~,\<,\>,\s,А-Я,а-я]/g,'');" >
+                    <button class="search" type="submit" form="example"> <img src="img/svg/glass.svg" alt="glass" class="glassIcon"></button> 
                 </form>
                 <div class="users">
                     <div class="usersSvg">
                         <div class="plus" style="z-index: 1; margin-left: -5px;"></div>
-                        
-                        <!-- <img src="img/svg/user0.svg" alt="" class="userIcon1" style="z-index: 1; margin-left: -5px;"> -->
-                        <!-- <img src="img/svg/user00.svg" alt="" class="userIcon4" style="z-index: 4; margin-left: -5px;"> -->
                         <img src="img/svg/user1.svg" alt="" class="userIcon2" style="z-index: 2; margin-left: -25px;">
                         <img src="img/svg/user2.svg" alt="" class="userIcon3" style="z-index: 3; margin-left: -45px;">
                         <img src="img/svg/user3.svg" alt="" class="userIcon4" style="z-index: 4; margin-left: -65px;">
                         
                     </div>
-                    <!-- <div class="usersText"> -->
                         <p>45k+ Regular User. <span>View Price Plan</span></p>
-                    <!-- </div> -->
                 </div>
                 
             </div>
