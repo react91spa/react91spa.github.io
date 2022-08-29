@@ -510,7 +510,7 @@ input:active, :hover, :focus {
     }
 }
 
-  @media (max-width: 1200px) {
+  @media screen and (max-width: 1200px) {
 
     .bars_menu {
         display: flex;
@@ -606,13 +606,13 @@ input:active, :hover, :focus {
     }
 }
 
-@media (max-width: 996px) {
+@media screen and (max-width: 996px) {
     main img {
         max-width: 600px;
     }
 }
 
-@media (max-width: 557px) {
+@media screen and (max-width: 557px) {
     .headerButton {
         font-size: 10px;
         padding: 5px 18px 5px 18px;
@@ -780,7 +780,7 @@ input:active, :hover, :focus {
     }
 }
 
-@media (max-width: 440px) {
+@media screen and (max-width: 440px) {
 
     .container {
     margin: 0 0 0 0;
@@ -937,7 +937,7 @@ input:active, :hover, :focus {
     }
 }
 
-@media (max-width: 320px) {
+@media screen and (max-width: 320px) {
     .container {
         margin: 0 0 0 8px;
     }
