@@ -796,9 +796,9 @@ input:active, :hover, :focus {
 
     input{
         width: 236px;
-        height: 30px;
+        height: 25px;
         font-size: 12px;
-        padding-left: 0;
+        padding-left: 2px;
         margin-left: 10px;
     }
 
